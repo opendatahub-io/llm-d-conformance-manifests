@@ -53,12 +53,11 @@ spec:
           periodSeconds: 30
           timeoutSeconds: 30
           failureThreshold: 5
-  workload:
-    kvCacheOffloading:
-      # Small CPU tier so it fills quickly and evicts to the filesystem tier.
-      cpu: "512Mi"
-      evictionPolicy: lru
-      secondary:
-        - fileSystem:
-            emptyDir:
-              size: "10Gi"
+  kvCacheOffloading:
+    # Small CPU tier so it fills quickly and evicts to the filesystem tier.
+    cpu: "512Mi"
+    evictionPolicy: lru
+    secondary:
+      - fileSystem:
+          emptyDir:
+            size: "10Gi"
