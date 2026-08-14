@@ -31,7 +31,7 @@ spec:
           # Shrink the on-GPU KV cache so modest traffic overflows to the CPU
           # tier and then spills to the filesystem tier (/mnt/kv-cache-0).
           - name: VLLM_ADDITIONAL_ARGS
-            value: "--gpu-memory-utilization 0.2"
+            value: "--gpu-memory-utilization 0.2 --max-model-len 16000"
         resources:
           limits:
             cpu: '4'
