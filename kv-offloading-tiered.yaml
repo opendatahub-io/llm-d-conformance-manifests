@@ -27,9 +27,6 @@ spec:
           sizeLimit: 1Gi
     containers:
       - name: main
-        volumeMounts:
-          - name: dshm
-            mountPath: /dev/shm
         env:
           # Shrink the on-GPU KV cache so modest traffic overflows to the CPU
           # tier and then spills to the filesystem tier (/mnt/kv-cache-0).
